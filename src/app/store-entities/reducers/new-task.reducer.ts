@@ -1,6 +1,6 @@
 import { Task } from 'src/app/interfaces/task';
-import { NewTaskAction } from '../actions/new-task-action';
-import * as newTask from '../actions/new-task-action';
+import { NewTaskAction } from '../actions/new-task.actions';
+import * as newTask from '../actions/new-task.actions';
 import { TimeTrackingState } from './index';
 
 export function reducer(
@@ -8,7 +8,7 @@ export function reducer(
     action: NewTaskAction
   ) {
     switch (action.type) {
-      case newTask.NEWTASK:
+      case newTask.NewTaskActionTypes.CreateNewTask:
 
         return {
             ...state,

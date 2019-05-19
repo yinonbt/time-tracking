@@ -38,3 +38,6 @@ ng generate @ngrx/schematics:store State --root --module app.module.ts -d
 
 ## generate action
 ng g action actions/NewTask
+
+## generate reducer
+ng g reducer reducers/NewTask --reducers index.ts --spec false
