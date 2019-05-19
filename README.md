@@ -32,3 +32,9 @@ npm install @ngrx/store @ngrx/effects @ngrx/entity @ngrx/store-devtools --save
 
 ## use schematics
 ng config cli.defaultCollection @ngrx/schematics
+
+## generate store
+ng generate @ngrx/schematics:store State --root --module app.module.ts -d
+
+## generate action
+ng g action actions/NewTask
