@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "time-tracking"
+  "defaultProject": "time-tracking",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
