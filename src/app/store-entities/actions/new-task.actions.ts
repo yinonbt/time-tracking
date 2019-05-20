@@ -1,8 +1,8 @@
-import { Action } from "@ngrx/store";
-import { Task } from "../../interfaces/task";
+import { Action } from '@ngrx/store';
+import { Task } from '../../interfaces/task';
 
 export enum NewTaskActionTypes {
-  CreateNewTask = "[NewTask] Create"
+  CreateNewTask = '[NewTask] Create'
 }
 
 export class NewTaskAction implements Action {

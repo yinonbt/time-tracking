@@ -7,9 +7,11 @@ import { reducers } from './store-entities/reducers/index';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TasksListComponent } from './components/tasks-list/tasks-list.component';
+import { SingleTaskComponent } from './components/single-task/single-task.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TasksListComponent, SingleTaskComponent],
   imports: [
     BrowserModule,
     FormsModule,
