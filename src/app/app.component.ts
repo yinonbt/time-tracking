@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'time-tracking';
+
+  newTaskFormGroup = this.formBuilder.group({
+    formControlTitle: [null]
+  });
+  constructor(private formBuilder: FormBuilder) {}
 }
