@@ -2,6 +2,6 @@ import { Time } from '@angular/common';
 
 export interface Task {
     title: string;
-    timeElapsed: Time;
+    secondsElapsed: number;
     isActive: boolean;
 }
