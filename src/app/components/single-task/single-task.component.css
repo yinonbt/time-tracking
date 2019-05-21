@@ -1,0 +1,14 @@
+.single-task-container {
+    height: 50px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;   
+    align-items: center; 
+    margin-top: 10px;
+}
+.single-task-title{
+    width: 150px;
+}
+.single-task-elapsed{
+    width: 50px;
+}

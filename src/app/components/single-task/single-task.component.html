@@ -1,3 +1,8 @@
-<p>
-  single-task works!
-</p>
+<div class="single-task-container">
+  <span class="single-task-title">{{ task.title }}</span>
+  <span class="single-task-elapsed">{{ task.secondsElapsed }}</span>
+  <button>
+    <span *ngIf="!task.isActive">Activate</span>
+    <span *ngIf="task.isActive">Deactivate</span>
+  </button>
+</div>

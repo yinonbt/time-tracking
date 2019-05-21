@@ -4,7 +4,7 @@
       Task Title:
     </label>
     <input id="inputTaskTitle" type="text" formControlName="formControlTitle" [placeholder]="'Enter Here Task Title'" />
-    <button type="submit">Add</button>
+    <button type="submit" [disabled]="newTaskFormGroup.invalid">Add</button>
   </div>
 </form>
 <app-tasks-list></app-tasks-list>
