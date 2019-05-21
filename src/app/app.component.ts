@@ -29,8 +29,7 @@ export class AppComponent {
   dispatchNewTask() {
     const newTaskTitle: string = this.newTaskFormGroup.get('formControlTitle')
       .value;
-    this.newTaskFormGroup.reset();
-    const newTask: Task = { title: newTaskTitle, secondsElapsed: 0, isActive: false };
-    this.store.dispatch(new NewTaskAction(newTask));
+    this.newTaskFormGroup.reset();    
+    this.store.dispatch(new NewTaskAction(newTaskTitle));
   }
 }

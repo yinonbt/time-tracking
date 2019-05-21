@@ -8,5 +8,5 @@ export enum NewTaskActionTypes {
 export class NewTaskAction implements Action {
   readonly type = NewTaskActionTypes.CreateNewTask;
 
-  constructor(public payload: Task) {}
+  constructor(public payload: string) {}
 }

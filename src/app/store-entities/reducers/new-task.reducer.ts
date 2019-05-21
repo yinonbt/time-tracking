@@ -1,6 +1,6 @@
 import { Task } from 'src/app/interfaces/task';
 import { NewTaskAction } from '../actions/new-task.actions';
-import * as newTask from '../actions/new-task.actions';
+import * as newTaskAction from '../actions/new-task.actions';
 import { TimeTrackingState } from './index';
 
 export function reducer(
@@ -8,10 +8,11 @@ export function reducer(
   action: NewTaskAction
 ) {
   switch (action.type) {
-    case newTask.NewTaskActionTypes.CreateNewTask:      
+    case newTaskAction.NewTaskActionTypes.CreateNewTask: 
+    const newTask: Task = { title: action.payload, secondsElapsed: 0, isActive: false };     
       const newState = {
         ...state,
-        tasks: [...state.tasks, action.payload]
+        tasks: [...state.tasks, newTask]
       };
       console.log('new task reducer: ', newState);
       return newState;
