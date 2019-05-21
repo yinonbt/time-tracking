@@ -9,7 +9,7 @@ export function reducer(
 ) {
   switch (action.type) {
     case newTaskAction.NewTaskActionTypes.CreateNewTask: 
-    const newTask: Task = { title: action.payload, secondsElapsed: 0, isActive: false };     
+    const newTask: Task = { id: state.tasks.length, title: action.payload, secondsElapsed: 0, isActive: false };     
       const newState = {
         ...state,
         tasks: [...state.tasks, newTask]
