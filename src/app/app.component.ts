@@ -29,7 +29,7 @@ export class AppComponent {
   dispatchNewTask() {
     const newTaskTitle: string = this.newTaskFormGroup.get('formControlTitle')
       .value;
-    this.newTaskFormGroup.reset();    
+    this.newTaskFormGroup.reset();
     this.store.dispatch(new NewTaskAction(newTaskTitle));
   }
 }
