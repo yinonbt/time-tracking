@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Task } from 'src/app/interfaces/task';
 import { Store } from '@ngrx/store';
 import * as fromReducers from '../../store-entities/reducers';
-import { ToggleTaskAction } from 'src/app/store-entities/actions/new-task.actions';
+import { ToggleTaskAction } from 'src/app/store-entities/actions/task.actions';
 
 @Component({
   selector: 'app-single-task',

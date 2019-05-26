@@ -9,6 +9,8 @@ import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TasksListComponent } from './components/tasks-list/tasks-list.component';
 import { SingleTaskComponent } from './components/single-task/single-task.component';
+import { EffectsModule } from '@ngrx/effects';
+import { TaskEffects } from './store-entities/effects/task.effects';
 
 @NgModule({
   declarations: [AppComponent, TasksListComponent, SingleTaskComponent],
@@ -19,7 +21,8 @@ import { SingleTaskComponent } from './components/single-task/single-task.compon
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
       maxAge: 10
-    })
+    }),
+    EffectsModule.forRoot([TaskEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

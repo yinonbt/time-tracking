@@ -1,20 +1,21 @@
 import { Task } from 'src/app/interfaces/task';
-import { NewTaskAction, TaskAction } from '../actions/new-task.actions';
-import * as newTaskAction from '../actions/new-task.actions';
+import { NewTaskAction, TaskAction } from '../actions/task.actions';
+import * as newTaskAction from '../actions/task.actions';
 import { TimeTrackingState } from './index';
 
 export function reducer(
   state: TimeTrackingState = { tasks: [] },
   action: TaskAction
 ) {
-  let newState;
+  let newState: TimeTrackingState;
   switch (action.type) {
     case newTaskAction.TaskActionTypes.CreateNewTask:
       const newTask: Task = {
         id: state.tasks.length,
         title: action.newTaskTitle,
         secondsElapsed: 0,
-        isActive: false
+        isActive: false,
+        lastActivation: null
       };
       newState = {
         ...state,
@@ -34,8 +35,19 @@ export function reducer(
           } else {
             const activeTasks = newState.tasks.filter(task => task.isActive);
             activeTasks.forEach(task => (task.isActive = false));
+            taskToBeToggled.lastActivation = new Date();
             taskToBeToggled.isActive = true;
           }
+        }
+      }
+      return newState;
+    case newTaskAction.TaskActionTypes.ProgressTask:
+      newState = { ...state };
+      if (newState.tasks) {
+        const taskToBeProgressed = newState.tasks.find(
+          task => task.isActive);
+        if (taskToBeProgressed && taskToBeProgressed.lastActivation) {
+          taskToBeProgressed.secondsElapsed += new Date().getTime() - taskToBeProgressed.lastActivation.getTime();
         }
       }
       return newState;

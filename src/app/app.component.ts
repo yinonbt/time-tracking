@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as fromReducers from './store-entities/reducers';
-import { NewTaskAction } from './store-entities/actions/new-task.actions';
+import { NewTaskAction } from './store-entities/actions/task.actions';
 import { Observable } from 'rxjs';
 
 @Component({
