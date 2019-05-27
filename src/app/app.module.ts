@@ -11,9 +11,11 @@ import { TasksListComponent } from './components/tasks-list/tasks-list.component
 import { SingleTaskComponent } from './components/single-task/single-task.component';
 import { EffectsModule } from '@ngrx/effects';
 import { TaskEffects } from './store-entities/effects/task.effects';
+import { MsToTimePipe } from './pipes/ms-to-time.pipe';
+import { SecToTimePipe } from './pipes/sec-to-time.pipe';
 
 @NgModule({
-  declarations: [AppComponent, TasksListComponent, SingleTaskComponent],
+  declarations: [AppComponent, TasksListComponent, SingleTaskComponent, MsToTimePipe, SecToTimePipe],
   imports: [
     BrowserModule,
     FormsModule,

@@ -47,7 +47,7 @@ export function reducer(
         const taskToBeProgressed = newState.tasks.find(
           task => task.isActive);
         if (taskToBeProgressed && taskToBeProgressed.lastActivation) {
-          taskToBeProgressed.secondsElapsed += new Date().getTime() - taskToBeProgressed.lastActivation.getTime();
+          taskToBeProgressed.secondsElapsed += 1;
         }
       }
       return newState;
