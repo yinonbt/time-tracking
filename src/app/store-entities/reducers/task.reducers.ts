@@ -14,8 +14,7 @@ export function reducer(
         id: state.tasks.length,
         title: action.newTaskTitle,
         secondsElapsed: 0,
-        isActive: false,
-        lastActivation: null
+        isActive: false
       };
       newState = {
         ...state,
@@ -35,7 +34,6 @@ export function reducer(
           } else {
             const activeTasks = newState.tasks.filter(task => task.isActive);
             activeTasks.forEach(task => (task.isActive = false));
-            taskToBeToggled.lastActivation = new Date();
             taskToBeToggled.isActive = true;
           }
         }
@@ -46,7 +44,7 @@ export function reducer(
       if (newState.tasks) {
         const taskToBeProgressed = newState.tasks.find(
           task => task.isActive);
-        if (taskToBeProgressed && taskToBeProgressed.lastActivation) {
+        if (taskToBeProgressed) {
           taskToBeProgressed.secondsElapsed += 1;
         }
       }

@@ -5,5 +5,4 @@ export interface Task {
     title: string;
     secondsElapsed: number;
     isActive: boolean;
-    lastActivation: Date;
 }
