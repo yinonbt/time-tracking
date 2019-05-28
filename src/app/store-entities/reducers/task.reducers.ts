@@ -23,7 +23,10 @@ export function reducer(
       console.log('new task reducer: ', newState);
       return newState;
     case newTaskAction.TaskActionTypes.ToggleTask:
-      newState = { ...state };
+      newState = {
+        ...state,
+        tasks: [...state.tasks]
+      };
       if (newState.tasks) {
         const taskToBeToggled = newState.tasks.find(
           task => task.id === action.taskToBeModifiedId
@@ -40,7 +43,10 @@ export function reducer(
       }
       return newState;
     case newTaskAction.TaskActionTypes.ProgressTask:
-      newState = { ...state };
+      newState = {
+        ...state,
+        tasks: [...state.tasks]
+      };
       if (newState.tasks) {
         const taskToBeProgressed = newState.tasks.find(
           task => task.isActive);
