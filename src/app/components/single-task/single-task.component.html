@@ -2,7 +2,7 @@
   <span class="single-task-title">{{ task.title }}</span>
   <span class="single-task-elapsed">{{ task.secondsElapsed | secToTime}}</span>
   <button (click)="toggleTask()">
-    <span *ngIf="!task.isActive">Activate</span>
-    <span *ngIf="task.isActive">Deactivate</span>
+    <span *ngIf="task.id !== (activeTaskId$ | async)">Activate</span>
+    <span *ngIf="task.id === (activeTaskId$ | async)">Deactivate</span>
   </button>
 </div>

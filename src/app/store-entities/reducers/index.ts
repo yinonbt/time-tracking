@@ -7,9 +7,11 @@ export const reducers = {
 };
 
 export interface TimeTrackingState {
+  activeTaskId: number;
   tasks: Task[];
 }
 
 export const selectors = {
-  getTasks: fromSelectors.getTasks
+  getTasks: fromSelectors.getTasks,
+  getActiveTaskId: fromSelectors.getActiveTaskId
 };

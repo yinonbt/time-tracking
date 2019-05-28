@@ -23,7 +23,7 @@ export class TasksListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.tasks$ = this.store.select(fromReducers.selectors.getTasks);
     this.tasks$.takeUntil(this.destroy$).subscribe(tasks => {
-      console.log('tasks updated: ', tasks);
+      //console.log('tasks updated: ', tasks);
     });
   }
 
