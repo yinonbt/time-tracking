@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class TaskEffects {
   @Effect()
-  interval$ = interval(1000).pipe(map(data => new ProgressTaskAction()));
+  interval$ = interval(1000).pipe(map(data => new ProgressTaskAction(null)));
 
 
   constructor(private actions$: Actions) {}

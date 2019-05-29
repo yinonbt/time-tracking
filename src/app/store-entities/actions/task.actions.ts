@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 
 export enum TaskActionTypes {
-  CreateNewTask = '[NewTask] Create',
+  CreateNewTask = 'Create',
   ToggleTask = '[ToggleTask] Load ToggleTasks',
   ProgressTask = '[ProgressTask] Progress Active Task'
 }
@@ -30,7 +30,7 @@ export class ToggleTaskAction extends TaskAction {
 }
 
 export class ProgressTaskAction extends TaskAction {
-  constructor() {
+  constructor(public payload: any) {
     super(TaskActionTypes.ProgressTask);
   }
 }
