@@ -4,7 +4,7 @@ import * as newTaskAction from '../actions/task.actions';
 import { TimeTrackingState } from './index';
 
 export function reducer(
-  state: TimeTrackingState = { tasks: [] , activeTaskId: null},
+  state: TimeTrackingState = { tasks: [], activeTaskId: null },
   action: TaskAction
 ) {
   let newState: TimeTrackingState;
@@ -31,7 +31,14 @@ export function reducer(
           task => task.id === action.taskToBeModifiedId
         );
         if (taskToBeToggled) {
-          newState.activeTaskId = taskToBeToggled.id;
+          if (
+            newState.activeTaskId != null &&
+            newState.activeTaskId === taskToBeToggled.id
+          ) {
+            newState.activeTaskId = null;
+          } else {
+            newState.activeTaskId = taskToBeToggled.id;
+          }
         }
       }
       console.log('toggle task reducer: ', newState);
@@ -43,7 +50,8 @@ export function reducer(
       };
       if (newState.tasks && newState.activeTaskId != null) {
         const taskToBeProgressed = newState.tasks.find(
-          task => task.id === newState.activeTaskId);
+          task => task.id === newState.activeTaskId
+        );
         if (taskToBeProgressed) {
           taskToBeProgressed.secondsElapsed += 1;
         }
